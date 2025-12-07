@@ -2,6 +2,7 @@ import { CallControls,CallingState,CallParticipantsList,PaginatedGridLayout,Spea
 import { LayoutListIcon,LoaderIcon,UsersIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import EndCallButton from "./EndCallButton";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui/resizable"
 import { DropdownMenu,DropdownMenuContent,DropdownMenuItem,DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
-
+import CodeEditor from "./CodeEditor";
 function MeetingRoom(){
     const router=useRouter();
     const[layout,setLayout]=useState<"speaker"|"grid">("speaker");
@@ -70,14 +71,16 @@ function MeetingRoom(){
                     <UsersIcon className="size-4" />
                   </Button>
 
-                 <p>end call button</p>
+                 <EndCallButton/>
                 </div>
               </div>
             </div>
           </div>
   </ResizablePanel>
   <ResizableHandle withHandle/>
-  <ResizablePanel defaultSize={65} minSize={25}>code editor</ResizablePanel>
+  <ResizablePanel defaultSize={65} minSize={25}>
+   <CodeEditor></CodeEditor>
+  </ResizablePanel>
 </ResizablePanelGroup>
 
         </div>
