@@ -125,7 +125,7 @@ function InterviewScheduleUI() {
         <p className="text-muted-foreground mt-1">Schedule Meeting</p>
         </div>
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger>
+            <DialogTrigger asChild>
                 <Button size="lg">Schedule Meeting</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[500px] h-[calc(100vh-200px)] overflow-auto">
